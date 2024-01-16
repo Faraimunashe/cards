@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UsersController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +30,5 @@ Route::get('/login', function () {
 Route::get('/settings', function () {
     return inertia('Settings');
 });
+
+Route::get('/users', [UsersController::class,'index'])->name('users');

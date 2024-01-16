@@ -38,7 +38,7 @@
             </div>
             <ul class="nav flex-column pt-3 pt-md-0">
                 <li class="nav-item">
-                    <Link href="/" class="nav-link d-flex align-items-center">
+                    <Link href="/" class="nav-link d-flex align-items-center" >
                         <span class="sidebar-icon">
                             <img src="../../assets/img/brand/light.svg" height="20" width="20" alt="CARDCRAFT PRO Logo">
                         </span>
@@ -46,17 +46,57 @@
                     </Link>
                 </li>
                 <li class="nav-item">
-                    <Link href="/" class="nav-link">
+                    <Link href="/" class="nav-link" :class="{'active': $page.url.startsWith('/dashboard')}">
                         <span class="sidebar-icon">
-                            <x-icon name="chart-pie" class="icon icon-xs me-2"/>
+                            <HomeIcon class="icon icon-xs me-2"/>
                         </span>
                         <span class="sidebar-text">Dashboard</span>
                     </Link>
                 </li>
                 <li class="nav-item">
-                    <Link href="/settings" class="nav-link">
+                    <Link href="#" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
                         <span class="sidebar-icon">
-                            <x-icon name="chart-pie" class="icon icon-xs me-2"/>
+                            <UserPlusIcon class="icon icon-xs me-2"/>
+                        </span>
+                        <span class="sidebar-text">New Student</span>
+                    </Link>
+                </li>
+                <li class="nav-item">
+                    <Link href="#" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                        <span class="sidebar-icon">
+                            <ArrowPathIcon class="icon icon-xs me-2"/>
+                        </span>
+                        <span class="sidebar-text">Replacement</span>
+                    </Link>
+                </li>
+                <li class="nav-item">
+                    <Link href="#" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                        <span class="sidebar-icon">
+                            <LinkIcon class="icon icon-xs me-2"/>
+                        </span>
+                        <span class="sidebar-text">Digitize</span>
+                    </Link>
+                </li>
+                <li class="nav-item">
+                    <Link href="#" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                        <span class="sidebar-icon">
+                            <PhotoIcon class="icon icon-xs me-2"/>
+                        </span>
+                        <span class="sidebar-text">Update Image</span>
+                    </Link>
+                </li>
+                <li class="nav-item">
+                    <Link href="/users" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                        <span class="sidebar-icon">
+                            <UsersIcon class="icon icon-xs me-2"/>
+                        </span>
+                        <span class="sidebar-text">Users</span>
+                    </Link>
+                </li>
+                <li class="nav-item">
+                    <Link href="#" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                        <span class="sidebar-icon">
+                            <Cog8ToothIcon class="icon icon-xs me-2"/>
                         </span>
                         <span class="sidebar-text">Settings</span>
                     </Link>
@@ -68,8 +108,9 @@
 
 <script>
 import { Link } from '@inertiajs/vue3';
+import { HomeIcon, UserPlusIcon, ArrowPathIcon, LinkIcon, PhotoIcon, Cog8ToothIcon, UsersIcon } from '@heroicons/vue/24/solid';
 
 export default {
-    components: { Link }
+    components: { Link, HomeIcon, UserPlusIcon, ArrowPathIcon, LinkIcon, PhotoIcon, Cog8ToothIcon, UsersIcon }
 }
 </script>
