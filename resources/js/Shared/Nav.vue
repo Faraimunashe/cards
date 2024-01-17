@@ -86,7 +86,7 @@
                     </Link>
                 </li>
                 <li class="nav-item">
-                    <Link href="/users" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                    <Link href="/users" class="nav-link" :class="{'active': $page.url.startsWith('/users')}">
                         <span class="sidebar-icon">
                             <UsersIcon class="icon icon-xs me-2"/>
                         </span>

@@ -17,21 +17,14 @@
             <p class="mb-0">Active Users.</p>
         </div>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a href="#" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modal-default">
-                <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+            <Link href="/users/create" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modal-default">
+                <PlusIcon class="icon icon-xs me-2"/>
                 New User
-            </a>
-            <div class="btn-group ms-2 ms-lg-3">
-                <button type="button" class="btn btn-sm btn-outline-gray-600">Share</button>
-                <button type="button" class="btn btn-sm btn-outline-gray-600">Export</button>
-            </div>
+            </Link>
         </div>
     </div>
     <div class="table-settings mb-4">
         <div class="row align-items-center justify-content-between">
-            <div class="col-12">
-                <x-alert/>
-            </div>
             <div class="col col-md-6 col-lg-3 col-xl-4">
                 <div class="input-group me-2 me-lg-3 fmxw-400">
                     <span class="input-group-text">
@@ -89,19 +82,30 @@ import Layout from '../Shared/Layout.vue';
 import Pagination from '../Shared/Pagination.vue';
 import { ref, watch } from 'vue';
 import { router } from '@inertiajs/vue3'
+import { PlusIcon } from '@heroicons/vue/24/solid';
+
 export default {
     layout: Layout,
     props: {
         users: Object
     },
     components: {
-        Pagination
-    },
+    Pagination,
+    PlusIcon
+},
     setup() {
         const search = ref('');
 
         watch(search, (value) => {
-            router.get('/users', {search: value}, {preserveState: true, preserveScroll: true})
+            router.get(
+                '/users',
+                {search: value},
+                {
+                    preserveState: true,
+                    preserveScroll: true,
+                    replace: true
+                }
+            )
 
         });
 
