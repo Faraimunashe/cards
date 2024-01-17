@@ -26,7 +26,7 @@
                                 <div class="media d-flex align-items-center">
                                     <img class="avatar rounded-circle" alt="Image placeholder" src="../../assets/images/user-icon.jpg">
                                     <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                                        <span class="mb-0 font-small fw-bold text-gray-900">Faraimunashe</span>
+                                        <span class="mb-0 font-small fw-bold text-gray-900">{{ username }}</span>
                                     </div>
                                 </div>
                             </a>
@@ -81,6 +81,11 @@ import Footer from './Footer.vue';
 export default {
     components: {
         Nav, Footer
+    },
+    computed: {
+        username() {
+            return this.$page.props.auth.user.name
+        }
     }
 }
 </script>

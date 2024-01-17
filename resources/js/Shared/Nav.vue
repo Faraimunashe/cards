@@ -101,6 +101,14 @@
                         <span class="sidebar-text">Settings</span>
                     </Link>
                 </li>
+                <li class="nav-item">
+                    <Link href="/logout" class="nav-link" method="post">
+                        <span class="sidebar-icon">
+                            <ArrowRightStartOnRectangleIcon class="icon icon-xs me-2"/>
+                        </span>
+                        <span class="sidebar-text">Logout</span>
+                    </Link>
+                </li>
             </ul>
         </div>
     </nav>
@@ -108,9 +116,9 @@
 
 <script>
 import { Link } from '@inertiajs/vue3';
-import { HomeIcon, UserPlusIcon, ArrowPathIcon, LinkIcon, PhotoIcon, Cog8ToothIcon, UsersIcon } from '@heroicons/vue/24/solid';
+import { HomeIcon, UserPlusIcon, ArrowPathIcon, LinkIcon, PhotoIcon, Cog8ToothIcon, UsersIcon, ArrowRightStartOnRectangleIcon } from '@heroicons/vue/24/solid';
 
 export default {
-    components: { Link, HomeIcon, UserPlusIcon, ArrowPathIcon, LinkIcon, PhotoIcon, Cog8ToothIcon, UsersIcon }
+    components: { Link, HomeIcon, UserPlusIcon, ArrowPathIcon, LinkIcon, PhotoIcon, Cog8ToothIcon, UsersIcon, ArrowRightStartOnRectangleIcon }
 }
 </script>

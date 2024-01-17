@@ -24,10 +24,11 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::middleware('auth')->group(function () {
+    //Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
 
-    Route::get('/welcome', function () {
+    Route::get('/dashboard', function () {
         return inertia('Welcome');
-    })->name('welcome');
+    })->name('dashboard');
 
     Route::get('/settings', function () {
         return inertia('Settings');

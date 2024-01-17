@@ -27,4 +27,10 @@ class LoginController extends Controller
         }
         return back()->withErrors('email','The login details are not valid');
     }
+
+    public function destroy(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
