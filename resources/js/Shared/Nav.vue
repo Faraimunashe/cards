@@ -54,7 +54,7 @@
                     </Link>
                 </li>
                 <li class="nav-item">
-                    <Link href="#" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
+                    <Link href="/new-student" class="nav-link" :class="{'active': $page.url.startsWith('/settings')}">
                         <span class="sidebar-icon">
                             <UserPlusIcon class="icon icon-xs me-2"/>
                         </span>

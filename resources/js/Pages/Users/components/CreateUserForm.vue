@@ -3,7 +3,6 @@
         <div class="col-12 mb-4">
             <div class="card border-0 shadow components-section">
                 <div class="card-body">
-                    <x-alert />
                     <form @submit.prevent="submit">
                         <div class="row mb-4">
                             <div class="col-lg-6">
